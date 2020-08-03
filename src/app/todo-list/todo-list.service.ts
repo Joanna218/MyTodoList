@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 // import model
 import { Todo } from "./todo.model";
+import { _ParseAST } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,9 @@ export class TodoListService {
 
   getList():Todo[] {
     return this.list;
+  }
+
+  remove(idx: number): void {
+    this.list.splice(idx, 1);
   }
 }
